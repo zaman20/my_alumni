@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Shop</title>
+    <!-- fontawesome icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- bootstap css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <!-- main style sheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="main-div">
+        <!-- left side -->
+        <div class="left-side">
+            <h2>Smart-Shop</h2>
+            <nav>
+                <ul>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="orders.html">Orders</a></li>
+                    <li><a href="accounts.html">Accounts</a></li>
+                    <li><a href="pos.html">POS</a></li>
+                    <li><a href="">Calculator</a></li>
+                    <li><a href="">Message</a></li>
+                    <li><a href="index.html">Log-Out</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="right-side">
+        <!-- product list -->
+            <div class="product-list">
+             <h2>New Orders</h2>
+             <div class="search-box ">
+                <form action="">
+                    <input type="text" placeholder="Search Here" class="search-text form-control">
+                    <input type="submit" value="Search" class="search-btn">
+                </form>
+             </div>
+             <div class="search-by-type">
+                <select name="" id="" class="form-select">
+                    <option selected disabled>Search By Type</option>
+                    <option value="">T-shirts</option>
+                    <option value="">Cloths</option>
+                    <option value="">Medicine</option>
+                    <option value="">Gadgets</option>
+                </select>
+             </div>
+             <table class="table table-striped">
+                <tr>
+                    <th>SL</th>
+                    <th>Image</th>
+                    <th>P.Name</th>
+                    <th>C.Name</th>
+                    <th>Address</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                    <th>Payment</th>
+                    <th>Action</th>
+                </tr>
+
+                <tr>
+                    <td>01</td>
+                    <td> <img src="img/16.avif" alt="" class="p-img">
+                    </td>
+                    <td>Men's T-shirt</td>
+                    <td>Zaman</td>
+                    <td>Rangpur</td>
+                    <td>300</td>
+                    <td>5</td>
+                    <td>1500 <sub>tk</sub></td>
+                    <td>COD <sub></sub></td>
+                    <td>
+                        <a href="#" class="btn btn-warning" title="Edit"><i class="fa-solid fa-pen"></i></a>
+                        <a href="#" class="btn btn-light" title="More"><i class="fa-solid fa-file-invoice"></i></a>
+                        <a href="#" class="btn btn-danger" title="Delete"><i class="fa-solid fa-trash"></i></a>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>02</td>
+                    <td> <img src="img/download (1).jpg" alt="" class="p-img">
+                    </td>
+                    <td>Men's T-shirt</td>
+                    <td>Zaman</td>
+                    <td>Rangpur</td>
+                    <td>300</td>
+                    <td>4</td>
+                    <td>1200 <sub>tk</sub></td>
+                    <td>BKash <sub>0177777</sub></td>
+                    <td>
+                        <a href="#" class="btn btn-warning" title="Edit"><i class="fa-solid fa-pen"></i></a>
+                        <a href="#" class="btn btn-light" title="More"><i class="fa-solid fa-file-invoice"></i></a>
+                        <a href="#" class="btn btn-danger" title="Delete"><i class="fa-solid fa-trash"></i></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>03</td>
+                    <td> <img src="img/download (3).jpg" alt="" class="p-img">
+                    </td>
+                    <td>Men's T-shirt</td>
+                    <td>Zaman</td>
+                    <td>Rangpur</td>
+                    <td>300</td>
+                    <td>4</td>
+                    <td>1200 <sub>tk</sub></td>
+                    <td>BKash <sub>0177777</sub></td>
+                    <td>
+                        <a href="#" class="btn btn-warning" title="Edit"><i class="fa-solid fa-pen"></i></a>
+                        <a href="#" class="btn btn-light" title="More"><i class="fa-solid fa-file-invoice"></i></a>
+                        <a href="#" class="btn btn-danger" title="Delete"><i class="fa-solid fa-trash"></i></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>04</td>
+                    <td> <img src="img/download (4).jpg" alt="" class="p-img">
+                    </td>
+                    <td>Men's T-shirt</td>
+                    <td>Nafis</td>
+                    <td>Rangpur</td>
+                    <td>300</td>
+                    <td>4</td>
+                    <td>1200 <sub>tk</sub></td>
+                    <td>BKash <sub>0177777</sub></td>
+                    <td>
+                        <a href="#" class="btn btn-warning" title="Edit"><i class="fa-solid fa-pen"></i></a>
+                        <a href="#" class="btn btn-light" title="More"><i class="fa-solid fa-file-invoice"></i></a>
+                        <a href="#" class="btn btn-danger" title="Delete"><i class="fa-solid fa-trash"></i></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>05</td>
+                    <td> <img src="img/images.jpg" alt="" class="p-img">
+                    </td>
+                    <td>Men's T-shirt</td>
+                    <td>Fahim</td>
+                    <td>Dhaka</td>
+                    <td>300</td>
+                    <td>4</td>
+                    <td>1200 <sub>tk</sub></td>
+                    <td>BKash <sub>0177777</sub></td>
+                    <td>
+                        <a href="#" class="btn btn-warning" title="Edit"><i class="fa-solid fa-pen"></i></a>
+                        <a href="#" class="btn btn-light" title="More"><i class="fa-solid fa-file-invoice"></i></a>
+                        <a href="#" class="btn btn-danger" title="Delete"><i class="fa-solid fa-trash"></i></a>
+                    </td>
+                </tr>
+
+             </table>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

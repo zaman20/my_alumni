@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart-shop Online Buy</title>
+    <!-- slider -->
+    <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
+    <!-- fontawesome icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- bootstap css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <!-- main style sheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container-fluid header-wrapper">
+        <div class="row">
+            <div class="col-lg-12 header">
+                <!-- header part -->
+                <div class="menu">
+                    <i class="fa-solid fa-bars menu-icon"></i>
+                </div>
+                <div class="search">
+                    <form action="">
+                        <input type="text" placeholder="Write Product Name...." class="home-search-box">
+                        <input type="submit" value="Search Now" class="home-search-btn">
+                    </form>
+                </div>
+                <div class="cart">
+                    <i class="fa-solid fa-cart-shopping cart-header"></i>
+                </div>
+            </div>
+            <!-- sidebar -->
+            <div class="sidebar">
+                <i class="fa-solid fa-xmark close-icon"></i>
+                <h2 class="f-logo">Smart-Shop</h2>
+                <ul>
+                    <li><a href="">T-shirsts</a></li>
+                    <li><a href="">T-shirsts</a></li>
+                    <li><a href="">T-shirsts</a></li>
+                    <li><a href="">T-shirsts</a></li>
+                    <li><a href="">T-shirsts</a></li>
+                    <li><a href="">T-shirsts</a></li>
+                </ul>
+            </div>
+            <!-- buy now form -->
+            <div class="buy-form row">
+                <div class="col-lg-5">
+                    <h2>Enter Information, please</h2>
+                    <form action="">
+                        <input type="text" placeholder="Your Name" class="form-control my-2">
+                        <input type="text" placeholder="Phone Number" class="form-control my-2">
+                        <label for="">Address: </label>
+                        <input type="radio" name="address" class="inside-btn" id="" > Inside of Store
+                        <input type="radio" name="address" class="outside-btn" id="" > Outside of Store
+                        <input type="text" placeholder="Write your Address" class="form-control my-2 address-box">
+                        <label for="">Please select your payment method: </label> <br>
+                        <input type="radio" name="p-method"  id="cod-btn"> Cash / COD 
+                        <input type="radio" name="p-method"  id="mobile-banking-btn"> Mobile Banking
+                        <div class="mobile-box">
+                            <p class="alert alert-warning my-1">Please,follow this steps  <br>
+                                1. Send your payment to this Bkash number: 01751018490 <br>
+                                2. After that put the exact mobile number which you used for payment <br>
+                                3. Put the correct Transaction number in the box ( which you recieved from the operator after making the payment)
+                            </p>
+                            <label for="">Select Operator:</label> 
+                            <input type="radio" name="p-operator" value="Bkash" id=""> Bkash
+                            <input type="radio" name="p-operator" value="Rocket" id=""> Rocket
+                            <input type="radio" name="p-operator" value="Nagad" id=""> Nagad 
+                            <input type="text" placeholder="Mobile Number" class="form-control my-2">
+                            <input type="text" placeholder="Transaction Id" class="form-control my-2">
+                        </div>
+                        <input type="submit" value="Confirm Order" class="form-control btn btn-dark my-2">
+                    </form>
+                </div>
+                <div class="col-lg-1"></div>
+                <div class="col-lg-6 ">
+                    <table class="table table-striped my-5 ml-3">
+                        <tr>
+                            <th>SL</th>
+                            <th>Img</th>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Total</th>
+                        </tr>
+                        <tr class="delivery">
+                            <td colspan="5">Delivery Charge: </td>
+                            <td>100</td>
+                        </tr>
+                        <tfoot>
+                            <tr class="table-dark">
+                                <td colspan="5">Total: </td>
+                                <td>12000</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+                </div>
+            <!-- footer -->
+            <div class="footer-area">
+                <div class="footer-box">
+                    <h2 class="f-logo">Smart Shop</h2>
+                    <div class="socail-link">
+                       <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook f-icon"></i></a> 
+                        <a href="https://youtube.com/"><i class="fa-brands fa-youtube f-icon"></i></a>
+                    </div>
+                    
+                    
+                </div>
+                <div class="footer-box">
+                    <h2>Contact Us</h2>
+                    <a href="tel:01751018490"><i class="fa-solid fa-phone f-icon"></i>01751018490</a> <br>
+                    <a href="mailto:contact@smartshop.com"><i class="fa-solid fa-envelope f-icon"></i>contact@smartshop.com</a>
+                    <p><i class="fa-solid fa-house f-icon"></i> HSTU Campus, Basherhut, Dinajpur</p>
+                </div>
+                <div class="footer-box">
+                    <p>Smart shop is a leading shop in this city....</p>
+                    <a href=""><i class="fa-solid fa-comment f-icon"></i>Send Us Message</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jq -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <!-- slider js -->
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-auto-scroll@0.5.3/dist/js/splide-extension-auto-scroll.min.js"></script>
+    <script>
+        // menu icon
+        $('.menu-icon').on('click',function(){
+            $('.sidebar').addClass('sidebar-show');
+        });
+        $('.close-icon').on('click',function(){
+            $('.sidebar').removeClass('sidebar-show');
+        });
+
+        $('.outside-btn').on('click',function(){
+            $('.address-box').show();
+        });
+        
+        $('.inside-btn').on('click',function(){
+            $('.address-box').hide();
+        });
+        
+        $('#mobile-banking-btn').on('click',function(){
+            $('.mobile-box').show();
+        });
+        $('#cod-btn').on('click',function(){
+            $('.mobile-box').hide();
+        });
+    </script>
+</body>
+</html>
