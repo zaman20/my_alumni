@@ -8,34 +8,41 @@
         <div class="right-side">
             <h2>Add New Post</h2>
             @if(session()->has('msg'))
-                <h6 class="notice">{{session('msg')}}</h6>
+            <div class="notice">
+                <h6>{{session('msg')}}</h6>
+            </div>
             @endif
             <div class="add-product-box">
-                <form action="/add-post" method="post" enctype="multipart/form-data" class="row">
+                <form action="/edit-post-submit" method="post" enctype="multipart/form-data" class="row">
                     @csrf
                     <div class="col-lg-12">
-                        <input type="text" name="title" placeholder="Title" class="form-control my-2">
+                        <input type="text" name="title" placeholder="Title" value="{{$data->title}}" class="form-control my-2">
                     </div>
                     
                     <div class="col-lg-12">
-                        <textarea name="description" id="" cols="30" rows="10" class="form-control my-2">Post Description</textarea>
+                        <textarea name="description" id="" cols="30" rows="10" class="form-control my-2">{{$data->description}}</textarea>
                     </div>
                     <div class="col-lg-6">
                         <select name="type" id="" class="form-select my-2">
-                            <option selected disabled>Post Type</option>
-                            <option value="1">News</option>
+                            @if($data->type == 1)
+                            <option value="1" selected>News</option>
                             <option value="2">Events</option>
+                            @else
+                            <option value="1" selected>News</option>
+                            <option value="2" selected>Events</option>
+                            @endif
                         </select>
                     </div>
                     <div class="col-lg-6">
                        <p class="my-2">Created By: Zaman</p>
-                       <input type="hidden" value="zaman" name="created_by">
+                       <input type="hidden" value="{{$data->created_by}}" name="created_by">
+                       <input type="hidden" value="{{$data->id}}" name="post_id">
                     </div>
                     
                     <div class="col-lg-12">
                         <!-- <label for="">Post Image</label> -->
                         <!-- <input type="file" name="image" class="form-control my-2"> -->
-                        <input type="submit" value="Create Post" class="form-control btn btn-dark">
+                        <input type="submit" value="Update Post" class="form-control btn btn-dark">
                     </div>
                    
                 </form>

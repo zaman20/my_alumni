@@ -18,7 +18,7 @@
                             <li><a href="{{url('events')}}">Events</a></li>
                             <li><a href="{{url('news')}}">News</a></li>
                             <li><a href="">Members</a></li>
-                            <li><a href="">Contact Us</a></li>
+                            <li><a href="{{url('contact-us')}}">Contact Us</a></li>
                             <li><a href="">Sponsors & Donors</a></li>
                             <li><a href="">HSTU</a></li>
                         </ul>
