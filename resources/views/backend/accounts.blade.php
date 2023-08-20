@@ -25,98 +25,38 @@
                     <th>SL</th>
                     <th>Image</th>
                     <th>Name</th>
-                    <th>User Type</th>
-                    <th>Phone</th>
+                    <th>Session</th>
+                    <th>Student_ID</th>
                     <th>Email</th>
+                    <th>Phone</th>
+                    <th>Address</th>
+                    <th>Organization</th>
+                    <th>Role</th>
                     <th>Action</th>
                 </tr>
-
+            @foreach($datas as $data)
                 <tr>
                     <td>01</td>
                     <td> <img src="img/download.png" alt="" class="p-img">
                     </td>
-                    <td>Zaman</td>
-                    <td>Admin</td>
-                    <td>555555</td>
-                    <td>adorzaman18@gmail.com</td>
+                    <td>{{$data->name}}</td>
+                    <td>{{$data->session}}</td>
+                    <td>{{$data->student_id}}</td>
+                    <td>{{$data->email}}</td>
+                    <td>{{$data->phone}}</td>
+                    <td>{{$data->address}}</td>
+                    <td>{{$data->organization}}</td>
+                    @if($data->role == 0)
+                        <td>User</td>
+                    @else if($data->role == 1)
+                        <td>Admin</td>
+                    @endif
                     <td>
-                        <a href="#" class="btn btn-warning" title="Edit"><i class="fa-solid fa-pen"></i></a>
                         <a href="#" class="btn btn-light" title="More"><i class="fa-solid fa-file-invoice"></i></a>
                         <a href="#" class="btn btn-danger" title="Delete"><i class="fa-solid fa-trash"></i></a>
                     </td>
                 </tr>
-                <tr>
-                    <td>02</td>
-                    <td> <img src="img/download.png" alt="" class="p-img">
-                    </td>
-                    <td>Salma</td>
-                    <td>Author</td>
-                    <td>555555</td>
-                    <td>adorzaman18@gmail.com</td>
-                    <td>
-                        <a href="#" class="btn btn-warning" title="Edit"><i class="fa-solid fa-pen"></i></a>
-                        <a href="#" class="btn btn-light" title="More"><i class="fa-solid fa-file-invoice"></i></a>
-                        <a href="#" class="btn btn-danger" title="Delete"><i class="fa-solid fa-trash"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>03</td>
-                    <td> <img src="img/download.png" alt="" class="p-img">
-                    </td>
-                    <td>Nafis</td>
-                    <td>Author</td>
-                    <td>555555</td>
-                    <td>adorzaman18@gmail.com</td>
-                    <td>
-                        <a href="#" class="btn btn-warning" title="Edit"><i class="fa-solid fa-pen"></i></a>
-                        <a href="#" class="btn btn-light" title="More"><i class="fa-solid fa-file-invoice"></i></a>
-                        <a href="#" class="btn btn-danger" title="Delete"><i class="fa-solid fa-trash"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>04</td>
-                    <td> <img src="img/download.png" alt="" class="p-img">
-                    </td>
-                    <td>Sabbir</td>
-                    <td>User</td>
-                    <td>555555</td>
-                    <td>adorzaman18@gmail.com</td>
-                    <td>
-                        <a href="#" class="btn btn-warning" title="Edit"><i class="fa-solid fa-pen"></i></a>
-                        <a href="#" class="btn btn-light" title="More"><i class="fa-solid fa-file-invoice"></i></a>
-                        <a href="#" class="btn btn-danger" title="Delete"><i class="fa-solid fa-trash"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>05</td>
-                    <td> <img src="img/download.png" alt="" class="p-img">
-                    </td>
-                    <td>Rahman</td>
-                    <td>User</td>
-                    <td>555555</td>
-                    <td>adorzaman18@gmail.com</td>
-                    <td>
-                        <a href="#" class="btn btn-warning" title="Edit"><i class="fa-solid fa-pen"></i></a>
-                        <a href="#" class="btn btn-light" title="More"><i class="fa-solid fa-file-invoice"></i></a>
-                        <a href="#" class="btn btn-danger" title="Delete"><i class="fa-solid fa-trash"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>06</td>
-                    <td> <img src="img/download.png" alt="" class="p-img">
-                    </td>
-                    <td>ador</td>
-                    <td>User</td>
-                    <td>555555</td>
-                    <td>adorzaman18@gmail.com</td>
-                    <td>
-                        <a href="#" class="btn btn-warning" title="Edit"><i class="fa-solid fa-pen"></i></a>
-                        <a href="#" class="btn btn-light" title="More"><i class="fa-solid fa-file-invoice"></i></a>
-                        <a href="#" class="btn btn-danger" title="Delete"><i class="fa-solid fa-trash"></i></a>
-                    </td>
-                </tr>
-
-              
+            @endforeach
 
              </table>
             </div>

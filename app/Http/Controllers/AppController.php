@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
+use App\Models\User;
 
 class AppController extends Controller
 {
@@ -66,5 +67,37 @@ class AppController extends Controller
     //contact us
     public function contactUs(){
         return view('contact');
+    }
+    //registerUser
+    public function registerUser(Request $request){
+       $name = $request->has('name')? $request->get('name'):'';
+       $email = $request->has('email')? $request->get('email'):'';
+       $phone = $request->has('phone')? $request->get('phone'):'';
+       $password = $request->has('password')? $request->get('password'):'';
+       $details = $request->has('details')? $request->get('details'):'';
+       $session = $request->has('session')? $request->get('session'):'';
+       $st_id = $request->has('st_id')? $request->get('st_id'):'';
+       $address = $request->has('address')? $request->get('address'):'';
+       $organization = $request->has('organization')? $request->get('organization'):'';
+       $image = $request->hasFile('pImage')? $request->get('pImage'):'';
+
+       User::insert([
+        'name' => $name ,
+        'email' => $email ,
+        'phone' => $phone,
+        'address' => $address,
+        'details' => $details,
+        'password'=>$password,
+        'student_id' =>$st_id ,
+        'session' => $session,
+        'organization' => $organization,
+        'image' => $image,
+       ]);
+       return back()->with('msg','Registration done! Please wait for admin approve');
+    }
+    //allUser
+    public function allUser(){
+        $datas = User::all();
+        return view('backend.accounts',compact('datas'));
     }
 }

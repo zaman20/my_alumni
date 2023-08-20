@@ -4,13 +4,7 @@
    @include('layouts.header')
 
     <!-- slider -->
-    <div class="slider-area content-wrapper">
-        <div class="owl-carousel">
-            <div> <img src="img/hstu_main_gate.jpg" alt=""> </div>
-            <div> <img src="img/33.jpg" alt=""> </div>
-            <div> <img src="img/hstu_main_gate.jpg" alt=""> </div>
-          </div>
-    </div>
+   @include('layouts.slider')
     <!-- news part -->
     <div class="news content-wrapper">
         <h2 class="news-title">News / Update</h2>

@@ -8,7 +8,7 @@
                         </a>
                     </div>
                     <a href="{{url('/')}}">
-                    <h3><span class="hstu">HSTU</span>ALUMNI</h3>
+                    <h3><span class="hstu">CSE</span>ALUMNI</h3>
                     </a>
                 </div>
                 <div class="header-right">
@@ -20,7 +20,7 @@
                             <li><a href="">Members</a></li>
                             <li><a href="{{url('contact-us')}}">Contact Us</a></li>
                             <li><a href="">Sponsors & Donors</a></li>
-                            <li><a href="">HSTU</a></li>
+                            <li><a href="{{url('login')}}">Login</a></li>
                         </ul>
                     </nav>
                 </div>

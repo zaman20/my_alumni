@@ -572,3 +572,8 @@ a.buy-btn.btn.btn-success {
 .notice{
     color: red;
 }
+.slider-area {
+    clear: right;
+    width: 80%;
+    margin: 0 auto;
+}
