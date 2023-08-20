@@ -19,6 +19,7 @@ Route::get('/login',function(){ return view('loginfront');});
 Route::get('/register',function(){ return view('register');});
 Route::get('/job-post-member',function(){ return view('job-post');});
 
+
 Route::post('/add-post',[AppController::class,'addPost']);
 Route::post('/dlt-post',[AppController::class,'dltPost']);
 Route::get('/edit-post/{id}',[AppController::class,'editPost']);
@@ -28,4 +29,6 @@ Route::get('/contact-us',[AppController::class,'contactUs']);
 Route::post('/register-user',[AppController::class,'registerUser']);
 Route::post('/check-login',[AppController::class,'checkLogin']);
 Route::post('/approve-member',[AppController::class,'approveMember']);
-
+Route::get('/members',[AppController::class,'members']);
+Route::post('/search-member',[AppController::class,'searchMembers']);
+Route::get('/logout-member',[AppController::class,'logout']);

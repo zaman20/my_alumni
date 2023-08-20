@@ -116,9 +116,13 @@ class AppController extends Controller
            if($pass == $password && $status==1 && $role == 0){
                 $news = Post::select('*')->where('type','=',1)->where('status','=',1)->paginate(4);
                 $events = Post::select('*')->where('type','=',2)->where('status','=',1)->paginate(4);
+                session()->put('name',$uName);
+                session()->put('role',$role);
+
                 return view('home',compact('news','events'));
 
            }else if($pass == $password && $status==1 && $role == 1){
+                session()->put('name',$uName);
                 return redirect('/dashboard');
            }else{
                 return back()->with('msg','Password Not Correct');
@@ -138,6 +142,24 @@ class AppController extends Controller
 
     }
 
-    
+    //members
+    public function members(){
+        $datas = User::select('*')->where('status','=',1)->get();
+        return view('members',compact('datas'));
+    }
+
+    //search members
+    public function searchMembers(Request $request){
+        $name = $request->has('name')? $request->get('name'):'';
+        $datas = User::select('*')->where('name','LIKE','%'.$name.'%')->where('status','=',1)->get();
+        return view('members',compact('datas'));
+    }
+
+    //logout
+    public function logout(){
+        session()->pull('name');
+        session()->pull('role');
+        return redirect('/');
+    }
 
 }

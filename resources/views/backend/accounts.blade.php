@@ -43,7 +43,11 @@
                     <td>01</td>
                     <td> <img src="img/download.png" alt="" class="p-img">
                     </td>
-                    <td>{{$data->name}}</td>
+                    <td>{{$data->name}} 
+                        @if($data->status == 0)
+                            <sub style="color:red;">Pending!</sub>
+                        @endif
+                    </td>
                     <td>{{$data->session}}</td>
                     <td>{{$data->student_id}}</td>
                     <td>{{$data->email}}</td>
@@ -56,7 +60,9 @@
                         <td>Admin</td>
                     @endif
                     <td>
-                        <a href="#" class="btn btn-light approve-btn" data-id="{{$data->id}}" title="Approve"><i class="fa-solid fa-file-invoice"></i></a>
+                        @if($data->status !=1)
+                        <a href="#" class="btn btn-light approve-btn" data-id="{{$data->id}}" title="Approve"><i class="fa-solid fa-check"></i></a>
+                        @endif
                         <a href="#" class="btn btn-danger" title="Delete"><i class="fa-solid fa-trash"></i></a>
                     </td>
                 </tr>

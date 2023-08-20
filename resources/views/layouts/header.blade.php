@@ -17,11 +17,15 @@
                             <li><a href="">About Us</a></li>
                             <li><a href="{{url('events')}}">Events</a></li>
                             <li><a href="{{url('news')}}">News</a></li>
-                            <li><a href="">Members</a></li>
                             <li><a href="{{url('contact-us')}}">Contact Us</a></li>
                             <li><a href="">Sponsors & Donors</a></li>
+                            @if(session()->has('name'))
+                            <li><a href="{{url('members')}}">Members</a></li>
                             <li><a href="{{url('job-post-member')}}">Job Post</a></li>
+                            <li><a href="{{url('logout-member')}}">Logout</a></li>
+                            @else
                             <li><a href="{{url('login')}}">Login</a></li>
+                            @endif
                         </ul>
                     </nav>
                 </div>

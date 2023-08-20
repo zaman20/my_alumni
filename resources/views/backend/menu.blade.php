@@ -6,7 +6,7 @@
                     <li><a href="{{url('all-post')}}">All Post</a></li>
                     <li><a href="{{url('all-account')}}">Accounts</a></li>
                     <li><a href="{{url('all-message')}}">Message</a></li>
-                    <li><a href="{{url('login')}}">Log-Out</a></li>
+                    <li><a href="{{url('logout-member')}}">Log-Out</a></li>
                 </ul>
             </nav>
         </div>

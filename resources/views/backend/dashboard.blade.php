@@ -8,6 +8,7 @@
         @include('backend.menu')
         <!-- right side -->
         <div class="right-side">
+            {{session('name')}}
             <div class="glance">
                 <h2>At a Glance</h2>
                 <div class="box">
