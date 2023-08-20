@@ -11,6 +11,9 @@
                 <h2 class="product-title">Users Account</h2>
                 <a href="{{url('create-user')}}" class="btn btn-dark add-new-btn">Add New <i class="fa-solid fa-plus"></i></a>
              <div class="search-box ">
+                @if(session()->has('msg'))
+                    <p class="alert alert-success">{{session('msg')}}</p>
+                @endif
              </div>
              <div class="search-by-type">
                 <select name="" id="" class="form-select">
@@ -20,6 +23,7 @@
                     <option value="">User</option>
                 </select>
              </div>
+            
              <table class="table table-striped">
                 <tr>
                     <th>SL</th>
@@ -52,7 +56,7 @@
                         <td>Admin</td>
                     @endif
                     <td>
-                        <a href="#" class="btn btn-light" title="More"><i class="fa-solid fa-file-invoice"></i></a>
+                        <a href="#" class="btn btn-light approve-btn" data-id="{{$data->id}}" title="Approve"><i class="fa-solid fa-file-invoice"></i></a>
                         <a href="#" class="btn btn-danger" title="Delete"><i class="fa-solid fa-trash"></i></a>
                     </td>
                 </tr>
@@ -63,4 +67,14 @@
         </div>
     </div>
 
+   <!-- =========== for approve id collect form==================== -->
+        <form action="/approve-member" method="POST" id="approveForm">
+            @csrf
+                <input type="hidden" value="" id="mID" name="mId">
+        </form>
+
+    <!-- =========================================================== -->
+
+    @include('layouts.linkjs')
+    @include('layouts.myjs')
 @endsection()

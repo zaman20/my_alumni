@@ -20,6 +20,7 @@
                             <li><a href="">Members</a></li>
                             <li><a href="{{url('contact-us')}}">Contact Us</a></li>
                             <li><a href="">Sponsors & Donors</a></li>
+                            <li><a href="{{url('job-post-member')}}">Job Post</a></li>
                             <li><a href="{{url('login')}}">Login</a></li>
                         </ul>
                     </nav>

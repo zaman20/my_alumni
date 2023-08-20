@@ -12,12 +12,14 @@ class AppController extends Controller
         $title = $request->has('title')? $request->get('title'):'';
         $description = $request->has('description')? $request->get('description'):'';
         $type = $request->has('type')? $request->get('type'):'';
+        $status = $request->has('status')? $request->get('status'):'';
         $created_by = $request->has('created_by')? $request->get('created_by'):'';
        // return $title.' '.$description.' '.$type.' '.$created_by;
        Post::insert([
         'title'=>$title,
         'description'=>$description,
         'type'=>$type,
+        'status'=>$status,
         'created_by'=>$created_by,
        ]);
 
@@ -45,8 +47,9 @@ class AppController extends Controller
         $created_by = $request->has('created_by')? $request->get('created_by'):'';
        Post::where('id','=',$id)->update([
         'title'=>$title,
-        'description'=>$description,
-        'type'=>$type,
+        'description'=> $description,
+        'type'=> $type,
+        'status'=> 1,
         'created_by'=>$created_by,
        ]);
 
@@ -55,8 +58,8 @@ class AppController extends Controller
 
     //home page
     public function homePage(){
-        $news = Post::select('*')->where('type','=',1)->paginate(4);
-        $events = Post::select('*')->where('type','=',2)->paginate(4);
+        $news = Post::select('*')->where('type','=',1)->where('status','=',1)->paginate(4);
+        $events = Post::select('*')->where('type','=',2)->where('status','=',1)->paginate(4);
         return view('home',compact('news','events'));
     }
     //single post
@@ -68,7 +71,7 @@ class AppController extends Controller
     public function contactUs(){
         return view('contact');
     }
-    //registerUser
+    //register User
     public function registerUser(Request $request){
        $name = $request->has('name')? $request->get('name'):'';
        $email = $request->has('email')? $request->get('email'):'';
@@ -95,9 +98,46 @@ class AppController extends Controller
        ]);
        return back()->with('msg','Registration done! Please wait for admin approve');
     }
-    //allUser
+    //all User
     public function allUser(){
         $datas = User::all();
         return view('backend.accounts',compact('datas'));
     }
+    //check Login
+    public function checkLogin(Request $request){
+        $uName = $request->has('user_name')? $request->get('user_name'):'';
+        $password = $request->has('password')? $request->get('password'):'';
+        
+        $data = User::select('*')->where('name',$uName)->first();
+        if($data){
+           $pass = $data->password;
+           $status = $data->status;
+           $role = $data->role;
+           if($pass == $password && $status==1 && $role == 0){
+                $news = Post::select('*')->where('type','=',1)->where('status','=',1)->paginate(4);
+                $events = Post::select('*')->where('type','=',2)->where('status','=',1)->paginate(4);
+                return view('home',compact('news','events'));
+
+           }else if($pass == $password && $status==1 && $role == 1){
+                return redirect('/dashboard');
+           }else{
+                return back()->with('msg','Password Not Correct');
+           }
+           
+        }else{
+            return back()->with('msg','User Name Not Found');
+        }
+        
+    }
+
+    //approve Member
+    public function approveMember(Request $request){
+        $id = $request->has('mId')? $request->get('mId'):'';
+        User::where('id',$id)->update(['status'=>1,]);
+        return back()->with('msg','Member Approved!');
+
+    }
+
+    
+
 }

@@ -1,17 +1,11 @@
 @extends('layouts.body')
 @section('content')
-    
-    <div class="main-div">
-        <!-- left side -->
-        @include('backend.menu')
 
-        <div class="right-side">
-            <h2>Add New Post</h2>
-            @if(session()->has('msg'))
-                <h6 class="notice">{{session('msg')}}</h6>
-            @endif
-            <div class="add-product-box">
-                <form action="/add-post" method="post" enctype="multipart/form-data" class="row">
+    @include('layouts.header')
+    
+    <div class="login-box">
+        <h2>CSE ALUMNI ASSOCIATION</h2>
+        <form action="/add-post" method="post" enctype="multipart/form-data" class="row">
                     @csrf
                     <div class="col-lg-12">
                         <input type="text" name="title" placeholder="Title" class="form-control my-2">
@@ -29,8 +23,8 @@
                     </div>
                     <div class="col-lg-6">
                        <p class="my-2">Created By: Zaman</p>
-                       <input type="hidden" value="admin" name="created_by">
-                       <input type="hidden" value="1" name="status">
+                       <input type="hidden" value="zaman" name="created_by">
+                       <input type="hidden" value="0" name="status">
                     </div>
                     
                     <div class="col-lg-12">
@@ -40,8 +34,16 @@
                     </div>
                    
                 </form>
-            </div>
-        </div>
+
+        @if(session()->has('msg'))
+            <p class="alert alert-danger my-2">{{session('msg')}}</p>
+        @endif
+
     </div>
+    
+
+    @include('layouts.footer')
+    @include('layouts.linkjs')
+    @include('layouts.myjs')
 
 @endsection()

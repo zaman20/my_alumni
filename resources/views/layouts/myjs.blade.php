@@ -19,5 +19,15 @@ $(document).ready(function(){
             return false;
         }
     });
+
+    //approve btn
+    $('.approve-btn').on('click',function(){
+        let id = $(this).data('id');
+        $('#mID').val(id);
+        $('#approveForm').submit();
+    });
+
+
 });
+
 </script>

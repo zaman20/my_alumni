@@ -37,7 +37,11 @@
                 @foreach($data as $post)
                 <tr>
                     <td>{{$post->id}}</td>
-                    <td>{{$post->title}}</td>
+                    <td>{{$post->title}}
+                    @if($post->status == 0)
+                        <p style="color:red;">Draft!</p>
+                    @endif
+                    </td>
                     <td>{{$post->created_by}}</td>
                     @if($post->type == 1)
                     <td>News</td>

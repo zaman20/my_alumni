@@ -3,9 +3,7 @@
 
     @include('layouts.header')
     
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
+    <div class="main-content">
                 <div class="login-box">
                     <h2>Register Account</h2>
                     <form action="/register-user" method="POST" class="row">
@@ -32,7 +30,8 @@
                         </div>
                         <div class="col-lg-6">
                             <input type="text" name="session" placeholder="Session" class="form-control my-2">
-                            <input type="text" name="organization" placeholder="Working Organization Name / Details" class="form-control my-2">
+                            <label for="">Your Working Organization</label>
+                            <input type="text" name="organization" placeholder="Organization Name" class="form-control my-2">
                         </div>
                         
                         <div class="col-lg-12">
@@ -44,8 +43,6 @@
                 @if(session()->has('msg'))
                     <p class="alert alert-success">{{session('msg')}}</p>
                 @endif
-            </div>
-        </div>
     </div>
 
     @include('layouts.footer')
