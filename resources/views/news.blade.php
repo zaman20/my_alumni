@@ -13,16 +13,13 @@
     <!-- news part -->
     <div class="news content-wrapper">
         <h2 class="news-title">News / Update</h2>
-        <div class="news-content">
-            <h3>Guest Lecture by Mr. Ashwin on topic Anti-Money Laundering</h3>
-            <p>The event started with lightening of the lamp Dr. Shweta Sharma, Head Alumni along with Shiv Kumar Triatic, Head and..</p>
-            <a href=""  class="btn btn-primary">Read More >></a>
-        </div>
-        <div class="news-content">
-            <h3>Guest Lecture by Mr. Ashwin on topic Anti-Money Laundering</h3>
-            <p>The event started with lightening of the lamp Dr. Shweta Sharma, Head Alumni along with Shiv Kumar Triatic, Head and..</p>
-            <a href=""  class="btn btn-primary">Read More >></a>
-        </div>
+            @foreach($news as $post)
+            <div class="news-content">
+                <h3>{{$post->title}}</h3>
+                <p>{{$post->description}}</p>
+                <a href="{{url('post-single/'.$post->id)}}"  class="btn btn-primary">Read More >></a>
+            </div>
+            @endforeach
     </div>
 
   

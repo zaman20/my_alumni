@@ -6,7 +6,7 @@
     <div class="main-content">
                 <div class="login-box">
                     <h2>Register Account</h2>
-                    <form action="/register-user" method="POST" class="row">
+                    <form action="/register-user" method="POST" class="row" enctype="multipart/form-data">
                         @csrf
                         <div class="col-lg-12">
                             <input type="text" name="name" placeholder="User Name" class="form-control my-2">

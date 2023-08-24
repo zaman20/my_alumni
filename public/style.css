@@ -32,7 +32,7 @@
     float: right;
 }
 .header-right ul {
-    margin-top: 30px;
+    margin-top: 23px;
 }
 .header-right ul li {
     display: inline-block;
@@ -586,11 +586,22 @@ a.buy-btn.btn.btn-success {
     margin-bottom: 20px;
 }
 .member-box {
-    width: 240px;
+    width: 228px;
     border: 2px solid #50b8ed;
     padding: 10px;
     text-align: center;
     float: left;
     margin: 2%;
     border-radius: 5px;
+    padding-bottom: 50px;
+}
+.member-box img{
+    width: 100%;
+}
+.about-txt{
+    margin-top: 30px;
+    line-height: 30px;
+    text-align: justify;
+    font-size: 17px;
+    
 }

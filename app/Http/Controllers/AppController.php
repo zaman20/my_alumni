@@ -62,6 +62,21 @@ class AppController extends Controller
         $events = Post::select('*')->where('type','=',2)->where('status','=',1)->paginate(4);
         return view('home',compact('news','events'));
     }
+    //news page
+    public function news(){
+        $news = Post::select('*')->where('type','=',1)->where('status','=',1)->paginate(4);
+        return view('news',compact('news'));
+    }
+    //event page
+    public function events(){
+        $events = Post::select('*')->where('type','=',2)->where('status','=',1)->paginate(4);
+        return view('events',compact('events'));
+    }
+    //job page
+    public function jobs(){
+        $jobs = Post::select('*')->where('type','=',3)->where('status','=',1)->paginate(4);
+        return view('jobs',compact('jobs'));
+    }
     //single post
     public function singlePost($id){
         $post = Post::select('*')->where('id','=',$id)->first();
@@ -82,7 +97,13 @@ class AppController extends Controller
        $st_id = $request->has('st_id')? $request->get('st_id'):'';
        $address = $request->has('address')? $request->get('address'):'';
        $organization = $request->has('organization')? $request->get('organization'):'';
-       $image = $request->hasFile('pImage')? $request->get('pImage'):'';
+       $image="";
+       if($request->hasFile('pImage')){
+        $file = $request->get('pImage');
+        $imageLocation = array();
+         
+       }
+
 
        User::insert([
         'name' => $name ,

@@ -6,8 +6,9 @@ use App\Http\Controllers\AppController;
 
 
 Route::get('/',[AppController::class,'homePage']);
-Route::get('/events',function(){ return view('events');});
-Route::get('/news',function(){return view('news');});
+Route::get('/events',[AppController::class,'events']);
+Route::get('/news',[AppController::class,'news']);
+Route::get('/jobs',[AppController::class,'jobs']);
 Route::get('/dashboard',function(){return view('backend.dashboard');});
 Route::get('/all-post',[AppController::class,'showPost']);
 Route::get('/create-post',function(){return view('backend.add-post');});
@@ -18,6 +19,9 @@ Route::get('/admin',function(){ return view('backend.login');});
 Route::get('/login',function(){ return view('loginfront');});
 Route::get('/register',function(){ return view('register');});
 Route::get('/job-post-member',function(){ return view('job-post');});
+Route::get('/about-us',function(){ return view('about');});
+Route::get('/sponsor',function(){ return view('sponsor');});
+Route::get('/gallery',function(){ return view('gallery');});
 
 
 Route::post('/add-post',[AppController::class,'addPost']);

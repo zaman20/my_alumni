@@ -10,20 +10,25 @@
             <div> <img src="img/hstu_main_gate.jpg" alt=""> </div>
           </div>
     </div>
-    <!-- event part -->
+    <!-- news part -->
     <div class="news content-wrapper">
-            <h2 class="news-title">Events</h2>
-            @foreach($events as $post)
+        <h2 class="news-title">Jobs Circular</h2>
+        @foreach($jobs as $post)
             <div class="news-content">
                 <h3>{{$post->title}}</h3>
                 <p>{{$post->description}}</p>
                 <a href="{{url('post-single/'.$post->id)}}"  class="btn btn-primary">Read More >></a>
             </div>
-            @endforeach
+        @endforeach
     </div>
+
+  
+
+   
     
     <!-- footer -->
     @include('layouts.footer')
     @include('layouts.linkjs')
     @include('layouts.myjs')
+
 @endsection()
