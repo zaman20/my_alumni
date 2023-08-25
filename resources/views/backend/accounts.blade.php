@@ -41,7 +41,12 @@
             @foreach($datas as $data)
                 <tr>
                     <td>01</td>
-                    <td> <img src="img/download.png" alt="" class="p-img">
+                    <td>
+                        @if($data->image)
+                         <img src="{{$data->image}}" alt="" class="p-img">
+                         @else
+                         <img src="img/download.png" alt="" class="p-img">
+                         @endif
                     </td>
                     <td>{{$data->name}} 
                         @if($data->status == 0)

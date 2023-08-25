@@ -8,49 +8,49 @@
         <!-- post list -->
             <div class="product-list">
                 <h2 class="product-title">All Message</h2>
-           
+                @if(session()->has('msg'))
+                    <p class="alert alert-success">{{session('msg')}}</p>
+                @endif
              <table class="table table-striped">
                 <tr>
                     <th>SL</th>
                     <th>Subject</th>
                     <th>Sent By</th>
-                    <th>Type</th>
+                    <th>Phone</th>
                     <th>Email</th>
                     <th>Date</th>
                     <th>Action</th>
                 </tr>
-
+                @php $count = 0; @endphp
+                @foreach($datas as $data)
+                    @php $count ++; @endphp
                 <tr>
-                    <td>01</td>
-                    <td>Men's Sport</td>
-                    <td>Zaman</td>
-                    <td>News</td>
-                    <td>aaa@gmail.com</td>
-                    <td>2-6-23</td>
+                    <td>{{$count}}</td>
+                    <td>{{$data->subject}}</td>
+                    <td>{{$data->name}}</td>
+                    <td>{{$data->phone}}</td>
+                    <td>{{$data->email}}</td>
+                    <td>{{$data->created_at}}</td>
                     <td>
-                        <a href="#" class="btn btn-warning" title="Edit"><i class="fa-solid fa-pen"></i></a>
-                        <a href="#" class="btn btn-light" title="More"><i class="fa-solid fa-file-invoice"></i></a>
-                        <a href="#" class="btn btn-danger" title="Delete"><i class="fa-solid fa-trash"></i></a>
+                        <a href="{{url('/read-message/'.$data->id)}}" class="btn btn-light " title="More"><i class="fa-solid fa-file-invoice"></i></a>
+                        <a href="#" class="btn btn-danger dlt-btn" data-id="{{$data->id}}" title="Delete"><i class="fa-solid fa-trash"></i></a>
                     </td>
                 </tr>
-
-                <tr>
-                    <td>02</td>
-                    <td>Men's Events</td>
-                    <td>Utso</td>
-                    <td>Event</td>
-                    <td>aaa@gmail.com</td>
-                    <td>22-5-23</td>
-                    <td>
-                        <a href="#" class="btn btn-warning" title="Edit"><i class="fa-solid fa-pen"></i></a>
-                        <a href="#" class="btn btn-light" title="More"><i class="fa-solid fa-file-invoice"></i></a>
-                        <a href="#" class="btn btn-danger" title="Delete"><i class="fa-solid fa-trash"></i></a>
-                    </td>
-                </tr>
+                @endforeach
+             
 
              </table>
             </div>
         </div>
     </div>
+    <!-- ==================================================== -->
+    <form action="/delete-message" method="POST" id="dltForm">
+        @csrf
+        <input type="hidden" val="" name="pId" id="postId"> 
+    </form>
 
+    <!-- ======================================================= -->
+
+    @include('layouts.linkjs')
+    @include('layouts.myjs')
 @endsection()

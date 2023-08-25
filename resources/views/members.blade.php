@@ -20,7 +20,11 @@
                     <h2>Alumni Members</h2>
                     @foreach($datas as $data)
                         <div class="member-box">
+                            @if(($data->image))
+                            <img src="{{$data->image}}" alt="">
+                            @else
                             <img src="/img/download.png" alt="">
+                            @endif
                             <h3>{{$data->name}}</h3>
                             <p>{{$data->organization}}</p>
                             <p>{{$data->phone}}</p>

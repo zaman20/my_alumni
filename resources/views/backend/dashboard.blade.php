@@ -13,19 +13,19 @@
                 <h2>At a Glance</h2>
                 <div class="box">
                 <h3>Total Post</h3>
-                <p>1222</p>
+                <p>{{$posts}}</p>
                 </div>
                 <div class="box">
                 <h3>Total Members</h3>
-                <p>3000000</p>
+                <p>{{$users}}</p>
                 </div>
                 <div class="box">
                 <h3>Events</h3>
-                <p>200000</p>
+                <p>{{$events}}</p>
                 </div>
                 <div class="box">
                 <h3>News</h3>
-                <p>4500</p>
+                <p>{{$news}}</p>
                 </div>
             </div>
 

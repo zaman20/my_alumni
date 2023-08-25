@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\User;
+use App\Models\Message;
 
 class AppController extends Controller
 {
@@ -97,10 +98,16 @@ class AppController extends Controller
        $st_id = $request->has('st_id')? $request->get('st_id'):'';
        $address = $request->has('address')? $request->get('address'):'';
        $organization = $request->has('organization')? $request->get('organization'):'';
-       $image="";
+       $image=" ";$i=0;
        if($request->hasFile('pImage')){
-        $file = $request->get('pImage');
+        $file = $request->file('pImage');
         $imageLocation = array();
+        $extension = $file->guessExtension();
+        $fileName = 'profile_image'.time().++$i.'.'.$extension;
+        $location = '/upload_images/';
+        $file->move(public_path().$location,$fileName);
+        $imageLocation[] = $location. $fileName;
+        $image = implode(',',$imageLocation);
          
        }
 
@@ -182,5 +189,49 @@ class AppController extends Controller
         session()->pull('role');
         return redirect('/');
     }
+    //dahsboard 
+    public function dashboard(){
+        $posts = Post::count();
+        $users = User::count();
+        $news = Post::where('type',1)->count();
+        $events = Post::where('type',2)->count();
+        return view('backend.dashboard', compact('posts','users','news','events'));
+    }
+    //message sending
+    public function sendMessage(Request $request){
+        $name = $request->has('name')? $request->get('name'):'';
+        $phone = $request->has('phone')? $request->get('phone'):'';
+        $email = $request->has('email')? $request->get('email'):'';
+        $subject = $request->has('subject')? $request->get('subject'):'';
+        $message = $request->has('msg')? $request->get('msg'):'';
+        
+        Message::insert([
+            'name'=>$name,
+            'phone'=>$phone,
+            'email'=>$email,
+            'subject'=>$subject,
+            'message'=>$message,
+        ]);
+        return back()->with('msg','Message Sent Successfully, We will reply you soon. Thanks!');
+
+    }
+
+    //view message
+    public function viewMessage(){
+        $datas = Message::all();
+        return view('backend.message',compact('datas'));
+    }
+    //read Message
+    public function readMessage($id){
+        $data = Message::SELECT('*')->where('id',$id)->first();
+        return view('backend.read-message',compact('data'));
+    }
+    //delete Message
+    public function deleteMessage(Request $request){
+        $id = $request->has('pId')? $request->get('pId'):'';
+        Message::where('id',$id)->delete();
+        return back()->with('msg','Message Deleted!');
+    }
+
 
 }
